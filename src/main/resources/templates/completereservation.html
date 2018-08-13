@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Complete Reservation</title>
+</head>
+<body>
+    <h2>Complete Reservation</h2>
+    <p th:inline="text">Airline: [[${flight.operatingAirlines}]]!</p>
+    <p th:inline="text">Departure City: [[${flight.departureCity}]]!</p>
+    <p th:inline="text">Arrival City: [[${flight.arrivalCity}]]!</p>
+
+
+    <form th:action="@{/completereservation/{id}(id=${flight.id})}" method="post">
+        <pre>
+        <h2>Passenger Details</h2>
+        First Name: <input type="text" name="firstName" >
+        Last name: <input type="text" name="lastName">
+        Email: <input type="text" name="email" >
+        Phone: <input type="text" name="phone">
+
+        <h2>Card Details</h2>
+        Name on the card: <input type="text" name="nameOnTheCard">
+        Card Number: <input type="text" name="cardNumber">
+        Expiry Date: <input type="text" name="expirationDate">
+        Three Digit Sec code: <input type="text" name="securityCode">
+
+         <!-- To send flight id to the next controller -->
+            <input type="hidden" name="id" th:value="${flight.id}"></pre>
+
+        <input type="submit" value="confirm"></pre>
+
+    </form>
+
+
+</body>
+</html>

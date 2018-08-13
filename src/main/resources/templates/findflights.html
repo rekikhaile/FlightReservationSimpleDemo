@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/findflights}" method="post">
+
+
+        From: <input type="text" name="from" >
+        To: <input type="text" name="to" >
+       <!-- Departure: <input type="text" name="departureDate" >-->
+        <input type="submit" value="search">
+
+</form>
+
+</body>
+</html>
